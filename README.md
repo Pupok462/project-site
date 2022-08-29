@@ -2,7 +2,7 @@
 by @Pupok462
 
 ## Usage 
-1. Clone This Project `git clone https://github.com/Pupok462/`
+1. Clone This Project `git clone https://github.com/Pupok462/project-site.git`
 2. Install Requirements Package `pip install -r requirements.txt`
 3. Navigate to Project Directory `cd shop`
 4. Migrate Data into Database `python manage.py migrate`
