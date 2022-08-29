@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="text-center" style="width: 100%">
+        <h2> Your Basket</h2>
+    </div>
+    <div class="shop-box-inner" style="margin-top: 15px">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-sm-8 col-xs-8">
+                <div class="row product-categorie-box">
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+                            <div class="row">
+                                {% for obj in object %}
+                                    {% if obj.user.username == user.username %}
+                                <div class="col-lg-3 col-md-6 special-grid "
+                                     style="margin-bottom: 40px; height: 230px;">
+                                    <div class="products-single fix shadow p-3 mb-5 bg-white rounded"
+                                         style="background-color: #eee; padding-bottom: 10px">
+                                        <a href="{% url 'devices:details' pk=obj.device.id%}">
+                                        <div class="box-img-hover ctr" style="height:180px; ">
+                                            <img src="{{obj.device.image.url}}" class="img-fluid" alt="Image">
+                                        </div></a>
+                                        <div class="text-center" style="height:60px;">
+                                            <div class="text-center">
+                                                <h6>{{obj.device.model}}</h6>
+                                                <h6>{{obj.device.price}} $</h6>
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <a href="#" class="btn btn-primary"
+                        style="border-radius: 18px; height: 28px; width: 60px; padding: 0">
+                                                <p style="font-size: 13px; margin-left: 3px; margin-top: 3px;">Remove</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+{% endblock %}
